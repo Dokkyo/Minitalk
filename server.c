@@ -59,10 +59,12 @@ void	signal_handler(int sig, siginfo_t *info, void *unused)
 	static char	c;
 	int			i;
 
-	(void)unused;
+	(void)unused;	
 	i = char_memberer(sig, &c);
 	if (i == 8 && c)
+	{
 		str = ft_strchar_join(str, c);
+	}
 	else if (i == 8 && !c)
 	{
 		ft_putstr_fd(str, 1);
